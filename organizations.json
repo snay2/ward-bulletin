@@ -1,0 +1,15 @@
+{
+    "orgs": [
+    {
+        "name":         "Ward Choir",
+        "start_date":   "15 June 2014",
+        "descr":        "In the First Presidency preface of the current hymnal, we are reminded that \"inspirational music is an essential part of our church meetings. \\ldots Some of the greatest sermons are preached by the singing of hymns. Hymns move us to repentance and good works, build testimony and faith, comfort the weary, console the mourning, and inspire us to endure to the end\" (\\textit{Hymns}, ix).\n\nCome worship with us through music at the Nay home @ 10:30 am every Sunday morning."
+    },
+    {
+        "name":         "Relief Society",
+        "start_date":   "15 June 2014",
+        "descr":        "Our Family Summer Bash will be 1 Junetember @ 7:00 pm at the park. Bring your own chairs and a treat to share!"
+    }
+        ]
+}
+

@@ -1,0 +1,50 @@
+{
+    "bulletin_date":    "15 June 2014",
+
+    "image_src":        "images/girl-singing.jpg",
+    "image_trim_l":     0,
+    "image_trim_b":     0,
+    "image_trim_r":     0,
+    "image_trim_t":     0,
+    "front_quote":      "Serve the Lord with gladness: come before his presence with singing.\n\nPsalm 100:2",
+
+    "presiding":        "Bishop John Doe",
+    "conducting":       "John Doe",
+    "music_director":   "Jane Doe",
+    "organist":         "Joe Organist",
+
+    "invocation":       "John Doe",
+    "benediction":      "Jane Doe",
+
+    "opening_hymn":     "\\#1 The Morning Breaks ",
+    "sacrament_hymn":   "\\#172 In Humility, Our Savior",
+    "rest_hymn":        "\\#2 The Spirit of God",
+    "closing_hymn":     "\\#3 Now Let Us Rejoice",
+
+    "has_testimonies":  false,
+    "has_rest_hymn":    false,
+    "has_musical_num":  true,
+    
+    "mn_title":         "Father's Day Medley",
+    "mn_group":         "Primary Children",
+    "mn_director":      "Jane Doe",
+    "mn_accompanist":   "Jane Doe",
+
+    "speakers_before":  [
+        {"type":        "Youth Speaker",
+         "name":        "John Doe"},
+        {"type":        "Youth Speaker",
+         "name":        "Jane Doe"},
+        {"type":        "Speaker",
+         "name":        "Jane Doe"}],
+
+    "speakers_after":   [
+        {"type":        "Speaker",
+         "name":        "John Doe"}],
+
+    "calendar_json":    "calendar.json",
+    "org_json":         "organizations.json",
+    "lessons_json":     "lessons.json",
+    "primary_json":     "primary.json"
+}
+

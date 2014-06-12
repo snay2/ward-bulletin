@@ -1,0 +1,7 @@
+*.swp
+*.aux
+*.log
+*.pdf
+bulletin.tex
+real/*
+

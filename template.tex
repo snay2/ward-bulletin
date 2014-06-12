@@ -1,0 +1,226 @@
+\documentclass[10pt,nofoldmark,notumble]{leaflet}
+% paperwidth must be for each panel, thus 14/3=4.66
+\usepackage[paperwidth=4.66in, paperheight=8.5in, margin=.3in]{geometry}
+
+\usepackage{url}        % for URL formatting
+\usepackage{graphicx}   % for images
+\usepackage{tabularx}   % for Primary assignments table
+\usepackage{paralist}   % for "compactitem" list type 
+\usepackage{csquotes}   % for smart quotes
+\usepackage{wallpaper}  % for image watermarks
+% example: \ThisCenterWallPaper{0.75}{../images/bike-wheel2.png}
+\usepackage{multirow}   % for multi-row cells in tabularx \multirow{2}{*}{hi}
+
+\MakeOuterQuote{"}
+\renewcommand{\familydefault}{\sfdefault} % use a sans-serif font 
+
+% my own version of cutline and foldmark
+\AddToBackground{1}{
+    \put(0,0){\rotatebox{90}{\makebox(\LenToUnit{.5in},0){
+        \normalsize\dotfill}}}}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+    {\huge \textbf{Anywhere First Ward}} \\
+    \vspace{1.5ex}
+    {\LARGE Anywhere Somewhere Stake} \\
+    \vspace{2.5ex}
+    {\Large $bulletin_date} \\
+\end{center}
+
+\vspace{\fill}
+% trim is l b r t
+\includegraphics[width=\linewidth, clip=true, trim=$image_trim_l $image_trim_b $image_trim_r $image_trim_t ]{$image_src}
+\vspace{2ex}
+
+\vspace{\fill}
+$front_quote
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Today at Church}
+
+\subsection{Gospel Doctrine}
+$sunday_school.this_week
+
+\subsection{Priesthood and Relief Society}
+$priesthood_rs.this_week
+
+\subsection{Primary}
+The following children have assignments in Opening Exercises:
+
+\renewcommand{\arraystretch}{1} % decrease space between table rows
+\begin{tabularx}{\linewidth}{ r X | r X }
+    \hline
+    \multicolumn{2}{c|}{\textbf{Junior Primary}} &
+    \multicolumn{2}{c}{\textbf{Senior Primary}} \\
+    Prayer & $primary['this_week']['junior_o_prayer']
+        & O Prayer & $primary['this_week']['senior_o_prayer'] \\
+    Scripture & $primary['this_week']['junior_scripture']
+        & Scripture & $primary['this_week']['senior_scripture'] \\
+    Talk & $primary['this_week']['junior_talk']
+        & Talk & $primary['this_week']['senior_talk'] \\
+    &   & C Prayer & $primary['this_week']['senior_c_prayer'] \\
+    \hline
+\end{tabularx}
+\vspace{\fill}
+
+\section{Next Week at Church}
+
+\subsection{Gospel Doctrine}
+$sunday_school.next_week
+
+\subsection{Priesthood and Relief Society}
+$priesthood_rs.next_week
+
+\subsection{Primary}
+The following children will have assignments in Opening Exercises:
+
+\renewcommand{\arraystretch}{1} % decrease space between table rows
+\begin{tabularx}{\linewidth}{ r X | r X }
+    \hline
+    \multicolumn{2}{c|}{\textbf{Junior Primary}} &
+    \multicolumn{2}{c}{\textbf{Senior Primary}} \\
+    Prayer & $primary['next_week']['junior_o_prayer']
+        & O Prayer & $primary['next_week']['senior_o_prayer'] \\
+    Scripture & $primary['next_week']['junior_scripture']
+        & Scripture & $primary['next_week']['senior_scripture'] \\
+    Talk & $primary['next_week']['junior_talk']
+        & Talk & $primary['next_week']['senior_talk'] \\
+    &   & C Prayer & $primary['next_week']['senior_c_prayer'] \\
+    \hline
+\end{tabularx}
+
+$primary['next_week']['theme']
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Use this panel for weekly or monthly content
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Organizations}
+
+#for $org in $orgs
+\subsection{$org['name']}
+$org['descr']
+
+#end for
+
+\vspace{\fill}
+ 
+\textbf{Appointments with the bishop} Contact John Doe at 801-555-1212 or
+\url{john@example.com}.
+
+\textbf{Temple recommend interviews} \textit{Ward:} Sundays right after church.
+\textit{Stake:} Tuesdays @ 7:00 pm
+
+\textbf{Bulletin information} Please send all bulletin information by Friday
+evening to \url{example@example.com}.
+
+Find last week's bulletin at \url{lds.org/member-news}.
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sacrament Meeting}
+\renewcommand{\arraystretch}{1.75} % increase space between table rows
+\begin{tabular}{ p{.3\linewidth} p{.6\linewidth} }
+    \textbf{Presiding} & $presiding \\
+    \textbf{Conducting} & $conducting \\
+    \textbf{Music Director} & $music_director \\
+    \textbf{Organist} & $organist \\
+    & \\
+    \hline
+    & \\
+    \textbf{Welcome} & $conducting \\
+    \textbf{Opening Hymn} & $opening_hymn \\
+    \textbf{Invocation} & $invocation \\
+    \textbf{Ward Business} & $conducting \\
+    \textbf{Sacrament Hymn} & $sacrament_hymn \\
+    & \\
+    \multicolumn{2}{c}{\textit{\large{Administration of the Sacrament}}} \\
+    & \\
+    #if $has_testimonies
+    \multicolumn{2}{c}{\textit{\large{Bearing of Testimonies}}} \\
+    & \\
+    #else
+    #for $speaker in $speakers_before
+    \textbf{$speaker.type} & $speaker.name \\
+    #end for
+    #if $has_musical_num
+    \textbf{Musical Number} & $mn_title \newline 
+        \textit{$mn_group}
+        #if $mn_director
+        \newline \textit{Directed by $mn_director}
+        #end if
+        #if $mn_accompanist
+        \newline \textit{Accompanied by $mn_accompanist}
+        #end if
+        \\
+    #end if
+    \textbf{Intermediate Hymn} & $rest_hymn \\
+    #for $speaker in $speakers_after
+    \textbf{$speaker.type} & $speaker.name \\
+    #end for
+    #end if
+    \textbf{Closing Hymn} & $closing_hymn \\
+    \textbf{Benediction} & $benediction \\
+\end{tabular} \\
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Calendar}
+\renewcommand{\arraystretch}{1.75} % increase space between table rows
+\begin{tabular}{ p{.3\linewidth} p{.6\linewidth}}
+    \textbf{Date and Time} & \textbf{Event} \\
+    \hline
+    \multicolumn{2}{c}{\textbf{This week}} \\
+    \hline
+    #for $event in $calendar['this_week']
+    $event['date']
+    #if $event['time']
+    \newline @ $event['time']
+    #end if
+    & \textbf{$event['title']}
+    #if $event['place']
+    \newline \textit{$event['place']}
+    #end if
+    #if $event['descr']
+    \newline $event['descr']
+    #end if
+    \\
+    #end for
+
+    \hline
+    \multicolumn{2}{c}{\textbf{Next week}} \\
+    \hline
+    #for $event in $calendar['next_week']
+    $event['date']
+    #if $event['time']
+    \newline @ $event['time']
+    #end if
+    & \textbf{$event['title']}
+    #if $event['place']
+    \newline \textit{$event['place']}
+    #end if
+    #if $event['descr']
+    \newline $event['descr']
+    #end if
+    \\
+    #end for
+    \hline
+
+\end{tabular}
+
+\clearpage
+
+\end{document}
+

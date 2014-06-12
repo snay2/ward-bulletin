@@ -1,0 +1,27 @@
+{
+    "weeks": [
+    {
+        "date":             "15 June 2014",
+        "junior_o_prayer":  "John Doe",
+        "junior_scripture": "Jane Doe",
+        "junior_talk":      "John Doe",
+        "senior_o_prayer":  "Jane Doe",
+        "senior_scripture": "John Doe",
+        "senior_talk":      "Jane Doe",
+        "senior_c_prayer":  "John Doe",
+        "theme":            "\\textbf{June Theme:} Priesthood ordinances and temple work bless my family.\n\"Whatsoever ye shall bind on earth shall be bound in heaven\" (Matthew 18:18)."
+    },
+    {
+        "date":             "22 June 2014",
+        "junior_o_prayer":  "Jane Doe",
+        "junior_scripture": "John Doe",
+        "junior_talk":      "Jane Doe",
+        "senior_o_prayer":  "John Doe",
+        "senior_scripture": "Jane Doe",
+        "senior_talk":      "John Doe",
+        "senior_c_prayer":  "Jane Doe",
+        "theme":            "\\textbf{June Theme:} Priesthood ordinances and temple work bless my family.\n\"Whatsoever ye shall bind on earth shall be bound in heaven\" (Matthew 18:18)."
+    }
+        ]
+}
+
