@@ -1,11 +1,12 @@
 {
     "events": [
     {
-        "date":     "15 June 2014",
+        "date":     "17 June 2014",
+        "date-override":    "17--22 June"
         "time":     "",
         "place":    "",
-        "title":    "Church cleaning",
-        "descr":    "The following families are responsible for this week: "
+        "title":    "Utah County Single Adult Conference",
+        "descr":    "This is an example of using a date override for a multi-day event"
     },
     {
         "date":     "20 June 2014",

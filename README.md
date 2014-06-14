@@ -6,7 +6,7 @@ These Python scripts generate a LaTeX document for a weekly LDS ward bulletin. T
 
 Invoke the generator like this:
 
-    python generate.py bulletin.json
+    python generate.py bulletin.json [--template template.tex] [--output bulletin.tex]
 
 Make sure your `bulletin.json`, `lessons.json`, `primary.json`, `organizations.json`, and `calendar.json` files are up to date.
 

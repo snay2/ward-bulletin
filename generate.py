@@ -27,7 +27,7 @@ def generate(input_json, template_tex, output_tex):
 
 def main():
     parser = argparse.ArgumentParser(description='Generate a LaTeX ward bulletin from the given configs')
-    parser.add_argument('--template', default='template.tex', help='LaTeX template file with Cheetah placeholders')
+    parser.add_argument('--template', default='template.tex', help='LaTeX template file with Cheetah placeholders (default template.tex)')
     parser.add_argument('--output', default='bulletin.tex', help='output file destination (default bulletin.tex)')
     parser.add_argument('input_file', help='JSON config file')
     args = vars(parser.parse_args())

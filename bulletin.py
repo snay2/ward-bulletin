@@ -29,8 +29,9 @@ class Bulletin:
     def parse_date(self, date_to_parse):
         return datetime.strptime(date_to_parse, "%d %B %Y")
 
-    def pretty_date(self, orig_date):
-        return self.parse_date(orig_date).strftime("%A %d %B")
+    def pretty_date(self, item):
+        item['date'] = self.parse_date(item['date']).strftime("%A %d %B")
+        return item
 
     def is_this_week(self, item):
         date_to_test = self.parse_date(item['date'])
@@ -48,6 +49,8 @@ class Bulletin:
         calendar = {}
         calendar['this_week'] = filter(self.is_this_week, events)
         calendar['next_week'] = filter(self.is_next_week, events)
+        map(self.pretty_date, calendar['this_week'])
+        map(self.pretty_date, calendar['next_week'])
         return calendar
 
     def filter_orgs(self, orgs):
@@ -62,6 +65,6 @@ class Bulletin:
     def filter_primary(self, assignments):
         primary = {}
         primary['this_week'] = filter(self.is_this_week, assignments)[0]
-        primary['next_week'] = filter(self.is_this_week, assignments)[0]
+        primary['next_week'] = filter(self.is_next_week, assignments)[0]
         return primary
 

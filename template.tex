@@ -165,7 +165,9 @@ Find last week's bulletin at \url{lds.org/member-news}.
         #end if
         \\
     #end if
+    #if $has_rest_hymn
     \textbf{Intermediate Hymn} & $rest_hymn \\
+    #end if
     #for $speaker in $speakers_after
     \textbf{$speaker.type} & $speaker.name \\
     #end for
@@ -185,7 +187,11 @@ Find last week's bulletin at \url{lds.org/member-news}.
     \multicolumn{2}{c}{\textbf{This week}} \\
     \hline
     #for $event in $calendar['this_week']
+    #if 'date_override' in $event
+    $event['date_override']
+    #else
     $event['date']
+    #end if
     #if $event['time']
     \newline @ $event['time']
     #end if
@@ -203,7 +209,11 @@ Find last week's bulletin at \url{lds.org/member-news}.
     \multicolumn{2}{c}{\textbf{Next week}} \\
     \hline
     #for $event in $calendar['next_week']
+    #if 'date_override' in $event
+    $event['date_override']
+    #else
     $event['date']
+    #end if
     #if $event['time']
     \newline @ $event['time']
     #end if
