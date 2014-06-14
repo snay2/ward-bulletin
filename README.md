@@ -16,7 +16,3 @@ I chose only to use templating for the things that change from week to week. If 
 
 I wanted the config files to be such that I normally had to update almost every line, and the template such that I almost never had to modify it. This way it's easy to remember everything that needs to be updated and hard to mess up the things that shouldn't change.
 
-## TODO
-
-This version of the code is rather quick-and-dirty. I plan to refactor it to make it easier to read and maintain.
-
