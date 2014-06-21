@@ -1,31 +1,19 @@
 {
-    "sunday_school": [
+    "lessons": [
     {
         "date":     "15 June 2014",
-        "lesson":   "Lesson \\#22: \"The Lord Looketh on the Heart\"\\newline\n1 Samuel 9--11; 13; 15--17"
+        "sunday_school":   "Lesson \\#22: \"The Lord Looketh on the Heart\"\\newline\n1 Samuel 9--11; 13; 15--17",
+        "priesthood_rs":   "Lesson \\#13: Baptism"
     },
     {
         "date":     "22 June 2014",
-        "lesson":   "Lesson \\#23: \"The Lord Be Between Thee and Me For Ever\"\\newline\n1 Samuel 18--20; 23--24"
+        "sunday_school":   "Lesson \\#23: \"The Lord Be Between Thee and Me For Ever\"\\newline\n1 Samuel 18--20; 23--24",
+        "priesthood_rs":   "Teachings for Our Time"
     },
     {
         "date":     "29 June 2014",
-        "lesson":   "Lesson \\#24: \"Create in Me a Clean Heart\"\\newline\n2 Samuel 11--12; Psalm 51"
-    }
-        ],
-
-    "priesthood_rs": [
-    {
-        "date":     "15 June 2014",
-        "lesson":   "Lesson \\#13: Baptism"
-    },
-    {
-        "date":     "22 June 2014",
-        "lesson":   "Teachings for Our Time"
-    },
-    {
-        "date":     "29 June 2014",
-        "lesson":   "5th Sunday Instruction"
+        "sunday_school":   "Lesson \\#24: \"Create in Me a Clean Heart\"\\newline\n2 Samuel 11--12; Psalm 51",
+        "priesthood_rs":   "5th Sunday Instruction"
     }
         ]
 }

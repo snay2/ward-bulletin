@@ -13,8 +13,8 @@ class Bulletin:
 
         self.input['calendar']      = self.filter_calendar(calendar['events'])
         self.input['orgs']          = self.filter_orgs(orgs['orgs'])
-        self.input['sunday_school'] = self.filter_lessons(lessons, 'sunday_school')
-        self.input['priesthood_rs'] = self.filter_lessons(lessons, 'priesthood_rs')
+        self.input['sunday_school'] = self.filter_lessons(lessons['lessons'], 'sunday_school')
+        self.input['priesthood_rs'] = self.filter_lessons(lessons['lessons'], 'priesthood_rs')
         self.input['primary']       = self.filter_primary(primary['weeks'])
 
     def load_json(self, filename):
@@ -58,8 +58,8 @@ class Bulletin:
 
     def filter_lessons(self, lessons, type):
         filtered = {}
-        filtered['this_week'] = filter(self.is_this_week, lessons[type])[0]['lesson']
-        filtered['next_week'] = filter(self.is_next_week, lessons[type])[0]['lesson']
+        filtered['this_week'] = filter(self.is_this_week, lessons)[0][type]
+        filtered['next_week'] = filter(self.is_next_week, lessons)[0][type]
         return filtered
 
     def filter_primary(self, assignments):
