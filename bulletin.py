@@ -54,7 +54,7 @@ class Bulletin:
         return calendar
 
     def filter_orgs(self, orgs):
-        return filter(self.is_before_this_week, orgs)
+        return sorted(filter(self.is_before_this_week, orgs), key=lambda org: org['date'], reverse=True)
 
     def filter_lessons(self, lessons, type):
         filtered = {}
