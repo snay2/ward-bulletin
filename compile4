@@ -1,0 +1,7 @@
+#!/bin/bash
+
+python ~/ward-bulletin/generate.py bulletin.json --template ../all/template4.tex
+pdflatex bulletin.tex
+pdflatex ../all/templatepaginator4.tex 
+mv templatepaginator4.pdf bulletin4.pdf
+
