@@ -30,7 +30,8 @@ class Bulletin:
         return datetime.strptime(date_to_parse, "%d %B %Y")
 
     def pretty_date(self, item):
-        item['date'] = self.parse_date(item['date']).strftime("%A %d %B")
+        # Added newlines for the 4-column format:
+        item['date'] = self.parse_date(item['date']).strftime("%A\n\n%d %B")
         return item
 
     def is_this_week(self, item):
@@ -47,8 +48,8 @@ class Bulletin:
 
     def filter_calendar(self, events):
         calendar = {}
-        calendar['this_week'] = filter(self.is_this_week, events)
-        calendar['next_week'] = filter(self.is_next_week, events)
+        calendar['this_week'] = sorted(filter(self.is_this_week, events), key=lambda event: self.parse_date(event['date']))
+        calendar['next_week'] = sorted(filter(self.is_next_week, events), key=lambda event: self.parse_date(event['date']))
         map(self.pretty_date, calendar['this_week'])
         map(self.pretty_date, calendar['next_week'])
         return calendar
